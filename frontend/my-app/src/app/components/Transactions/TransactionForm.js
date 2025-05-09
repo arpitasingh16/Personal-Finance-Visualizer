@@ -2,7 +2,7 @@
 
 'use client';
 import { useState } from 'react';
-import { addTransaction } from '../lib/api';
+import { addTransaction } from '../../lib/api';
 
 const predefinedCategories = ['Food', 'Travel', 'Rent', 'Utilities', 'Shopping', 'Entertainment', 'Others'];
 
@@ -27,10 +27,10 @@ export default function TransactionForm({ onAdd }) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4 p-4 border rounded-xl shadow">
-      <input name="amount" type="number" placeholder="Amount" value={form.amount} onChange={handleChange} required className="border p-2 w-full" />
-      <input name="date" type="date" value={form.date} onChange={handleChange} required className="border p-2 w-full" />
-      <input name="description" placeholder="Description" value={form.description} onChange={handleChange} required className="border p-2 w-full" />
-      <select name="category" value={form.category} onChange={handleChange} required className="border p-2 w-full">
+      <input name="amount" type="number" placeholder="Amount" value={form.amount} onChange={handleChange} required className="border p-2 w-full text-black" />
+      <input name="date" type="date" value={form.date} onChange={handleChange} required className="border p-2 w-full text-black" />
+      <input name="description" placeholder="Description" value={form.description} onChange={handleChange} required className="border p-2 w-full text-black" />
+      <select name="category" value={form.category} onChange={handleChange} required className="border p-2 w-full text-black">
         <option value="">Select Category</option>
         {predefinedCategories.map((cat) => (
           <option key={cat} value={cat}>{cat}</option>
